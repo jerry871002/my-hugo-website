@@ -1,0 +1,50 @@
+{{- $headers := findRE "<h[2-4].*?>(.|\n])+?</h[2-4]>" .Content -}}
+{{- $has_headers := ge (len $headers) 1 -}}
+{{- if $has_headers -}}
+<h2>目錄</h2>
+<ul >
+  {{- range $i, $header := $headers -}}
+    {{- $headerLevel := index (findRE "[2-4]" . 1) 0 -}}
+    {{- $headerLevel := len (seq $headerLevel) -}}
+
+    {{/* get id="xyz" */}}
+    {{ $id := index (findRE "(id=\"([^\"]*?)\")" $header 9) 0 }}
+
+    {{/* strip id="" to leave xyz (no way to get regex capturing groups in hugo :( */}}
+    {{ $cleanedID := replace (replace $id "id=\"" "") "\"" "" }}
+
+    {{- if ne $i 0 -}}
+      {{- $prevHeaderLevel := index (findRE "[2-4]" (index $headers (sub $i 1)) 1) 0 -}}
+      {{- $prevHeaderLevel := len (seq $prevHeaderLevel) -}}
+        {{- if gt $headerLevel $prevHeaderLevel -}}
+          {{- range seq (sub $headerLevel $prevHeaderLevel) -}}
+            <ul>
+          {{- end}}
+        {{- end}}
+        {{- if lt $headerLevel $prevHeaderLevel -}}
+          {{- range seq (sub $prevHeaderLevel $headerLevel) -}}
+            </li></ul></li>
+          {{- end}}
+        {{- end}}
+        {{- if eq $headerLevel $prevHeaderLevel -}}
+          </li>
+        {{- end}}
+        <li>
+          <a href="#{{- $cleanedID  -}}">{{- $header | plainify | htmlEscape | safeHTML -}}</a>
+        {{- if eq $i (sub (len $headers) 1) -}}
+          {{- range seq (sub $prevHeaderLevel $headerLevel) -}}
+            </li></ul></li>
+          {{- end}}
+        {{- end}}
+    {{- else}}
+    <li>
+      <a href="#{{- $cleanedID -}}">{{- $header | plainify | htmlEscape | safeHTML -}}</a>
+    {{- end -}}
+  {{- end -}}
+  {{- $firstHeaderLevel := len (seq (index (findRE "[2-4]" (index $headers 0) 1) 0)) -}}
+  {{- $lastHeaderLevel := len (seq (index (findRE "[2-4]" (index $headers (sub (len $headers) 1)) 1) 0)) -}}
+  {{- range seq (sub $lastHeaderLevel $firstHeaderLevel) -}}
+    </li></ul></li>
+  {{- end -}}
+</ul>
+{{- end -}}
