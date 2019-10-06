@@ -10,3 +10,7 @@
 [submodule "beautifulhugo"]
 	path = beautifulhugo
 	url = https://github.com/halogenica/beautifulhugo.git
+[submodule "public"]
+	path = public
+	url = https://github.com/jerry871002/jerry871002.github.io.git
+	branch = master
