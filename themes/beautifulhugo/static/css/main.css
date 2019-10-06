@@ -121,7 +121,7 @@ img {
 }
 
 .img-title {
-  width: 100%;
+  width: 50%;
 }
 
 .disqus-comments {
@@ -765,7 +765,7 @@ div.splitbox div.right {
     padding: 15px 25px;
   }
 }
-.disqus-comments button:hover, 
+.disqus-comments button:hover,
 .disqus-comments button:focus {
   color: #FFF;
   background: #0085a1;

@@ -1,41 +1,46 @@
 ---
 title: "Head First C"
+subtitle: "主要是寫一些讀書心得"
 date: 2019-10-06T14:19:49+08:00
 draft: false
+toc: true
+image: img/head-first-c.jpeg
 ---
 
 # 深入淺出C
-![Head First C](https://im2.book.com.tw/image/getImage?i=https://www.books.com.tw/img/001/056/40/0010564017.jpg&v=50893552&w=348&h=348)
+![Head First C](/img/head-first-c.jpeg)
 
 ## 前幾章一些值得注意的小細節
 
-* `&&`表示「並且假如成功的話，就進行⋯⋯」
+* `A && B` 表示「假如A執行成功的話，就執行B」
 
 	```bash
 	$ gcc zork.c -o zork && ./zork
-	```  
-* `break`**不能**用來中斷`if`陳述式  
-	誤用`break`去中斷`if`的後果可以看[這裡](http://users.csc.calpoly.edu/~jdalbey/SWE/Papers/att_collapse.html)（The 1990 AT&T Long Distance Network Collapse）
+	```
+
+* `break` **不能** 用來中斷 `if` 陳述式  
+	誤用 `break` 去中斷 `if` 的後果可以看[這裡](http://users.csc.calpoly.edu/~jdalbey/SWE/Papers/att_collapse.html)（The 1990 AT&T Long Distance Network Collapse）
 
 * 串接指定  
-	`x = 4`運算式本身也具有回傳值`4`  
-	`y = x = 4;`把`x`和`y`都設定成`4`
+	`x = 4` 運算式本身也具有回傳值 `4`  
+	`y = x = 4;` 把 `x` 和 `y` 都設定成 `4`
 
 * 陣列變數當作指標使用  
 	`doses[3] == *(doses + 3) == *(3 + doses) == 3[doses]`
 
-* 字串實字（String literals）**永遠不能**被更新  
-	* 指向字串實字的變數**不能**用來改變該字串的內容  
+* 字串實字（String literals）**永遠不能** 被更新  
+    * 指向字串實字的變數 **不能** 用來改變該字串的內容  
 
-		```c
-		char *cards = "JQK";
-		cards[2] = cards[1]; //不合法！！
-		```		
-	* 如果從字串實字重新建立一個陣列，就**「能夠」**修改該陣列  
+    	```c
+    	char *cards = "JQK";
+    	cards[2] = cards[1]; // 這不合法！！
+    	```
+
+	* 如果從字串實字重新建立一個陣列，就**「能夠」** 修改該陣列  
 
 		```c
 		char cards[] = "JQK";
-		cards[2] = cards[1]; //合法！！
+		cards[2] = cards[1]; // 合法！！
 		```
 
 * 記憶體存儲器（位址由高至低）

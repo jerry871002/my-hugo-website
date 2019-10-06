@@ -1,6 +1,6 @@
 baseURL = "https://jerry871002.github.io/"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "Jerry's Blog"
 theme = "beautifulhugo"
 
 DefaultContentLanguage = "zh-tw"
@@ -12,17 +12,18 @@ pygmentsStyle = "monokailight"
 # pygmentsUseClasses = true
 pygmentsCodeFences = true
 pygmentsCodefencesGuessSyntax = true
-#pygmentsUseClassic = true
+# pygmentsUseClassic = true
 # pygmentOptions = "linenos=table"
 #disqusShortname = "XXX"
 #googleAnalytics = "XXX"
+summaryLength = 20
 
 [Params]
- # homeTitle = "Beautiful Hugo Theme" # Set a different text for the header on the home page
-  subtitle = "Build a beautiful and simple website in minutes"
+  homeTitle = "Jerry's Blog" # Set a different text for the header on the home page
+  subtitle = "Baseball ⚾️ Computer Science 🖥  Electrical Engineering 💡"
   mainSections = ["post","posts"]
-  logo = "img/avatar-icon.png" # Expecting square dimensions
-  favicon = "img/favicon.ico"
+  logo = "img/baseball.png" # Expecting square dimensions
+  favicon = "img/baseball.ico"
   dateFormat = "January 2, 2006"
   commit = false
   rss = true
@@ -85,12 +86,12 @@ pygmentsCodefencesGuessSyntax = true
 
 [[menu.main]]
     name = "About"
-    url = "page/about/"
+    url = "about/"
     weight = 3
 
 [[menu.main]]
     name = "Test Link"
-    url = "post/my-first-post/"
+    url = "posts/my-first-post/"
     weight = 3
 
 [[menu.main]]
