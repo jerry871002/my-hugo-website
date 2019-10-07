@@ -1,14 +1,5 @@
-[submodule "themes/even"]
-	path = themes/even
-	url = https://github.com/olOwOlo/hugo-theme-even.git
-[submodule "themes/hugo-nuo"]
-	path = themes/hugo-nuo
-	url = https://github.com/laozhu/hugo-nuo.git
-[submodule "themes/casper-two"]
-	path = themes/casper-two
-	url = https://github.com/ansin218/hugo-casper-two.git
 [submodule "beautifulhugo"]
-	path = beautifulhugo
+	path = themes/beautifulhugo
 	url = https://github.com/halogenica/beautifulhugo.git
 [submodule "public"]
 	path = public
