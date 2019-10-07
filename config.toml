@@ -19,9 +19,9 @@ pygmentsCodefencesGuessSyntax = true
 
 [Params]
   homeTitle = "Jerry's Blog" # Set a different text for the header on the home page
-  subtitle = "Baseball ⚾️ Computer Science 🖥  Electrical Engineering 💡"
+  subtitle = "Yesterday’s home runs don’t win today’s games"
   mainSections = ["post","posts"]
-  logo = "img/baseball.png" # Expecting square dimensions
+  logo = "img/idea.png" # Expecting square dimensions
   favicon = "img/baseball.ico"
   dateFormat = "January 2, 2006"
   commit = false
