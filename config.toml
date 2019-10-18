@@ -3,9 +3,8 @@ languageCode = "en-us"
 title = "Jerry's Blog"
 theme = "beautifulhugo"
 
-DefaultContentLanguage = "zh-tw"
+DefaultContentLanguage = "en"
 #DefaultContentLanguage = "ja"
-# title = "Beautiful Hugo"
 # theme = "beautifulhugo"
 metaDataFormat = "yaml"
 pygmentsStyle = "monokailight"
@@ -15,7 +14,7 @@ pygmentsCodefencesGuessSyntax = true
 # pygmentsUseClassic = true
 # pygmentOptions = "linenos=table"
 #disqusShortname = "XXX"
-#googleAnalytics = "XXX"
+googleAnalytics = "UA-150355160-1"
 
 [Params]
   homeTitle = "Jerry's Blog" # Set a different text for the header on the home page
@@ -23,9 +22,9 @@ pygmentsCodefencesGuessSyntax = true
   mainSections = ["post","posts"]
   logo = "img/idea.png" # Expecting square dimensions
   favicon = "img/baseball.ico"
-  dateFormat = "January 2, 2006"
+  dateFormat = "Jan 2, 2006"
   commit = false
-  rss = true
+  rss = false
   comments = true
   readingTime = true
   wordCount = false
