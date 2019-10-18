@@ -1,9 +1,14 @@
 ---
-title: "My First Post"
+title: "Python 神乎其技 Ch3"
+subtitle: "活用函式"
 date: 2019-10-06T09:20:53+08:00
+image: /img/python-trick.jpeg
+tags: ["讀書筆記", "Python Tricks", "Python"]
 draft: false
 toc: true
 ---
+
+這篇的內容是來自[Python 神乎其技：精要剖析語法精髓，大幅提升程式功力！](https://www.books.com.tw/products/0010790137)這本書的第三章，會介紹一些Python函式的特性與好用的功能
 
 ## 語彙閉包（closure）
 ---
@@ -399,7 +404,7 @@ class Car:
 class AlwaysBlueCar(Car):
     def __init__(self, *args, **kargs):
         print(args)
-        print(kargs)      
+        print(kargs)
         super().__init__(*args, **kargs)
         self.color = 'blue'
 ```
@@ -460,7 +465,7 @@ greet('Hello', 'Bob')
 
 ## 函式參數拆箱
 ---
-
+假設有一個簡單的函數 `print_vector`
 
 ```python
 def print_vector(x, y, z):
@@ -474,8 +479,8 @@ print_vector(0, 1, 0)
 
     <0, 1, 0>
 
-
-> 又繁瑣又容易出錯的方式
+如果你有一個`tuple`或`list`要作為參數傳進去<br>
+一個一個傳進去是又**繁瑣**又**容易出錯**的方式
 
 
 ```python
@@ -489,7 +494,8 @@ print_vector(tuple_vec[0],
     <1, 0, 1>
 
 
-> 簡單又容易除錯
+如果直接用函式拆箱<br>
+則是**簡單**又**容易除錯**
 
 
 ```python
@@ -497,3 +503,5 @@ print_vector(*tuple_vec)
 ```
 
     <1, 0, 1>
+
+> Do the same thing with less and clearer code
